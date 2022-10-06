@@ -24,7 +24,7 @@ while i < len(img):
     i += 1
 
 
-
+#poisfwe
 
 
 # show and save image
