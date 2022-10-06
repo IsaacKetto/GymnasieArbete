@@ -1,4 +1,3 @@
-import imghdr
 from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
