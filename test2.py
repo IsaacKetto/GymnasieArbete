@@ -5,7 +5,7 @@ import sys
 import cv2
 
 np.set_printoptions(threshold=sys.maxsize)
-img = mpimg.imread("C:\\Users\\Melker\\OneDrive\\Documents\\GitHub\\GymnasieArbete\\Brabild.png")
+img = mpimg.imread("Brabild.png")
 print(img[0][0])
 
-mpimg.imsave("hej", img)
+# mpimg.imsave("hej", img)
