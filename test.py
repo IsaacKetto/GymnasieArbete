@@ -29,7 +29,7 @@ while i < len(img):
 
 # show and save image
 # print(img[0][0][3])
-cv2.imwrite("Bild.png", img)
+# cv2.imwrite("Bild.png", img)
 cv2.imshow('image',img)
 cv2.waitKey(0)
 
