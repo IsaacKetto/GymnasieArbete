@@ -14,14 +14,14 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 
 
 #Change value in array
-i = 0
-while i < len(img):
-    
-    j = 0
-    while j < len(img[0]):
-        img[i][j][3] =  100
-        j += 1
-    i += 1
+for row in img:
+    for pixel in row:
+        i = 0
+        while i < 4:
+            pixel[i] = 100
+            i += 1
+
+print(img)
 
 
 
