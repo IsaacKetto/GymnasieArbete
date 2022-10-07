@@ -1,5 +1,5 @@
 #Convert string to bytes with bytes(str, enc, error)
-message = "Isaac är kung"
+message = "Oscar är bäst"
 message_encoded = bytes(message, 'UTF-8')
 
 #Printing the encoded message
