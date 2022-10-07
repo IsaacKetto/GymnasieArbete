@@ -2,6 +2,7 @@ from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
 import cv2
+from message_convert import array_with_byte_message
 
 np.set_printoptions(threshold=sys.maxsize)
 
@@ -9,17 +10,20 @@ img = cv2.imread('brabild.png',1)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
 
-message_length = message.length
-
-#Gör noise för en random bild och se om du kan bestämma specifika values innan V.41
+#variable to close an infinite loop
+finished = False
 
 #Change value in array
-for row in img:
-    for pixel in row:
-        i = 0
-        while i < 4:
-            pixel[i] = 100
-            i += 1
+while finished == False:
+    i = 0
+    for row in img:
+        for pixel in row[::4]:
+            if i < len(array_with_byte_message):
+                pixel[3] = array_with_byte_message[i]
+                i += 1
+                print(pixel)
+            elif i >= len(array_with_byte_message):
+                finished = True
 
 
 # show and save image
