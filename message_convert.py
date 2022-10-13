@@ -1,5 +1,5 @@
-#Convert string to bytes with bytes(str, enc, error)
-message = "Oscar is the best"
+#Convert string to bytes with bytes(str, enc)
+message = "10 words to hide in a really cool red picture 10 words to hide in a really cool red picture"
 message_encoded = bytes(message, 'UTF-8')
 array_with_byte_message = []
 
@@ -12,4 +12,4 @@ for bytes in message_encoded:
 
 print(array_with_byte_message)
 
-#Convert bytes back to string
+#Decoding message from image file
