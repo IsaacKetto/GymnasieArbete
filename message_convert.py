@@ -1,5 +1,5 @@
 #Convert string to bytes with bytes(str, enc, error)
-message = "10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture"
+message = "Hejjsjdoijaoijdoiasjdoijasoidjasoijdoiasjdoiasjoidjsiojdoiajdoiasjdijasoisdjaoisjdoiasjdoiasjdoiasjoidjasoidjoisajdioasjdoasdoasjodijasoidjasoijdoiasj"
 message_encoded = bytes(message, 'UTF-8')
 array_with_byte_message = []
 
