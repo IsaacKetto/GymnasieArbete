@@ -13,8 +13,6 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #variable to close an infinite loop
 finished = False
 
-print(len(array_with_byte_message))
-
 #Change value in array
 while finished == False:
     i = 0
@@ -23,7 +21,6 @@ while finished == False:
             if i < len(array_with_byte_message):
                 pixel[3] = array_with_byte_message[i]
                 i += 1
-                print(pixel)
             elif i >= len(array_with_byte_message):
                 finished = True
 
@@ -32,7 +29,5 @@ while finished == False:
 # print(img[0][0][3])
 
 cv2.imwrite("Bild.png", img)
-cv2.imshow('image', (cv2.imread('Bild.png',1)))
-cv2.waitKey(0)
 
 
