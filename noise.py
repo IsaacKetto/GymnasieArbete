@@ -13,6 +13,8 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #variable to close an infinite loop
 finished = False
 
+print(len(array_with_byte_message))
+
 #Change value in array
 while finished == False:
     i = 0

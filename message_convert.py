@@ -1,5 +1,5 @@
 #Convert string to bytes with bytes(str, enc, error)
-message = "Hejjsjdoijaoijdoiasjdoijasoidjasoijdoiasjdoiasjoidjsiojdoiajdoiasjdijasoisdjaoisjdoiasjdoiasjdoiasjoidjasoidjoisajdioasjdoasdoasjodijasoidjasoijdoiasj"
+message = "Hej po dig lille van po taket"
 message_encoded = bytes(message, 'UTF-8')
 array_with_byte_message = []
 
