@@ -2,17 +2,16 @@ from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
 import cv2
+from noise import img
 
 np.set_printoptions(threshold=sys.maxsize)
 
-img = cv2.imread('Bild.png',1)
-img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
-#Datan visas i B G R A
+print(img[0][0][3])
 
 retrieved_data = []
 j=0
 i=0
-message_length = 32 #retrieve length with encryption key
+message_length = 3 #retrieve length with encryption key
 for row in img:
     for pixel in row:
         if (i % 4) == 0:

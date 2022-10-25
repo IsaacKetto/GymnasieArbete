@@ -30,6 +30,7 @@ while finished == False:
 
 # show and save image
 # print(img[0][0][3])
+
 cv2.imwrite("Bild.png", img)
 cv2.imshow('image', (cv2.imread('Bild.png',1)))
 cv2.waitKey(0)
