@@ -14,15 +14,19 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 
 
 #Change value in array
-for row in img:
-    for pixel in row:
-        i = 0
-        while i < 4:
-            # pixel[i] = 100
-            i += 1
+img = img.flatten()
 
-print(img[0][1])
-print(img[0][0])
+lenghts = len(img)/4
+print(lenghts)
+img = np.reshape(img, (lenghts, 4))
+
+print(img)
+# for row in img:
+#     for pixel in row:
+#         i = 0
+#         while i < 4:
+#             # pixel[i] = 100
+#             i += 1
 
 
 
@@ -31,7 +35,7 @@ print(img[0][0])
 # show and save image
 # print(img[0][0][3])
 # cv2.imwrite("Bild.png", img)
-cv2.imshow('image',img)
+# cv2.imshow('image',img)
 cv2.waitKey(0)
 
 
