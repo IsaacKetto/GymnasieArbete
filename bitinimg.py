@@ -10,7 +10,8 @@ np.set_printoptions(threshold=sys.maxsize)
 img = cv2.imread('brabild.png',1)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
-
+columb = len(img[0])
+row = len(img)
 
 def toBinary(a):
     l,m=[],[]
@@ -24,12 +25,14 @@ def toBinary(a):
         n += str(i)
     return n
 
-def flatten(img):
-    img = img.flatten()
-    lenghts = int(len(img)/4)
-    img = np.reshape(img, (lenghts, 4))
-    return img
 
+
+def flaten(img, columb, row):
+    img = np.reshape(img, ((columb*row), 4))
+    return img
+def reshape(img, columb, row):
+    img = np.reshape(img, (row, columb, 4))
+    return img
 
 
 
@@ -37,7 +40,7 @@ def flatten(img):
 msg = toBinary("Hejsan ")
 print(msg)
 #Change value in array
-img = flatten(img)
+img = flaten(img, columb,row)
 
 j = 0
 for pixel in img:
