@@ -1,5 +1,5 @@
 #Convert string to bytes with bytes(str, enc, error)
-message = "10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture 10 words to hide in a really cool red picture"
+message = "hej kuksugare"
 message_encoded = bytes(message, 'UTF-8')
 array_with_byte_message = []
 
@@ -9,7 +9,5 @@ print(message_encoded)
 #Decoding the message
 for bytes in message_encoded:
     array_with_byte_message.append(bytes)
-
-print(array_with_byte_message)
 
      

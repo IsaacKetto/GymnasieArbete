@@ -21,15 +21,13 @@ while finished == False:
             if i < len(array_with_byte_message):
                 pixel[3] = array_with_byte_message[i]
                 i += 1
-                print(pixel)
             elif i >= len(array_with_byte_message):
                 finished = True
 
 
 # show and save image
 # print(img[0][0][3])
+
 cv2.imwrite("Bild.png", img)
-cv2.imshow('image',img)
-cv2.waitKey(0)
 
 
