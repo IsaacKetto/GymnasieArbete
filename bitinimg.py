@@ -28,6 +28,11 @@ def toBinary(a):
 msg = toBinary("Hejsan ")
 print(msg)
 #Change value in array
+
+
+
+
+
 j = 0
 for row in img:
     for pixel in row:

@@ -16,8 +16,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Change value in array
 img = img.flatten()
 
-lenghts = len(img)/4
-print(lenghts)
+lenghts = int(len(img)/4)
 img = np.reshape(img, (lenghts, 4))
 
 print(img)
