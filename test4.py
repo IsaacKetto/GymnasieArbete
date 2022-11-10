@@ -10,16 +10,13 @@ np.set_printoptions(threshold=sys.maxsize)
 img = cv2.imread('Brabild.png',1)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
+columb = len(img[0])
+row = int(len(img))
 
-
-
-#Change value in array
-img = img.flatten()
-
-lenghts = int(len(img)/4)
-img = np.reshape(img, (lenghts, 4))
-
-print(img)
+def flaten(img, columb, row):
+    img = np.reshape(img, ((columb*row), 4))
+def reshape(img, columb, row):
+    img = np.reshape(img, (row, columb, 4))
 # for row in img:
 #     for pixel in row:
 #         i = 0

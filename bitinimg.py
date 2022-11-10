@@ -24,29 +24,50 @@ def toBinary(a):
         n += str(i)
     return n
 
+def flatten(img):
+    img = img.flatten()
+    lenghts = int(len(img)/4)
+    img = np.reshape(img, (lenghts, 4))
+    return img
+
+
+
+
 
 msg = toBinary("Hejsan ")
 print(msg)
 #Change value in array
-
-
-
-
+img = flatten(img)
 
 j = 0
-for row in img:
-    for pixel in row:
-        while j < len(msg):
-            i = 0
-            while i < 4:
-                if pixel[i] % 2 != int(msg[j]):
-                    if pixel[i] == 255:
-                        pixel[i] = pixel[i]-1
-                    else:
-                        pixel[i] = pixel[i]+1
-                j += 1
-                i += 1
+for pixel in img:
+    if j < len(msg):
+        i = 0
+        while i < 4:
+            print(j)
+            if pixel[i] % 2 != int(msg[j]):
+                if pixel[i] == 255:
+                    pixel[i] = pixel[i]-1
+                else:
+                    pixel[i] = pixel[i]+1
+            j += 1
+            i += 1
 
+
+
+# j = 0
+# for row in img:
+#     for pixel in row:
+#         while j < len(msg):
+#             i = 0
+#             while i < 4:
+#                 if pixel[i] % 2 != int(msg[j]):
+#                     if pixel[i] == 255:
+#                         pixel[i] = pixel[i]-1
+#                     else:
+#                         pixel[i] = pixel[i]+1
+#                 j += 1
+#                 i += 1
 
 
 
