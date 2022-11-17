@@ -16,14 +16,6 @@ finished = False
 #variable to determine space between affected pixels
 space_between_pixels = (len(img)*len(img[0]))/len(array_with_byte_message)
 
-#function to retrieve pos for each pixel for every spacing amount using the spacing variable
-# def pixels_to_change(spacing):
-#     pixels = []
-#     i = 0
-#     row = 0
-#     if len(img[0])*(row+1) <= spacing/(row+1):
-        
-
 #Change value in array
 
     # affected_pixels = pixels_to_change(space_between_pixels)

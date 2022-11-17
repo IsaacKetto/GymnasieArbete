@@ -1,11 +1,22 @@
+import imghdr
+from PIL import Image, ImageFilter, ImageChops
+import sys 
 import numpy as np
-from noise_v2 import img
+import cv2
 
-img = img.flatten()
+np.set_printoptions(threshold=sys.maxsize)
 
-lenghts = len(img)/4
-print(lenghts)
-lenghts = int(len(img)/4)
-img = np.reshape(img, (lenghts, 4))
 
-print(img)
+img = cv2.imread('Brabild.png',1)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
+#Datan visas i B G R A
+columb = len(img[0])
+row = len(img)
+
+def flaten(img, columb, row):
+    img = np.reshape(img, ((columb*row), 4))
+    return img
+
+def reshape(img, columb, row):
+    img = np.reshape(img, (row, columb, 4))
+    return img
