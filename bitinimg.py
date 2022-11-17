@@ -7,7 +7,7 @@ import math
 np.set_printoptions(threshold=sys.maxsize)
 
 
-img = cv2.imread('brabild.png',1)
+img = cv2.imread('bratestbild.png', cv2.IMREAD_UNCHANGED)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
 columb = len(img[0])
@@ -30,6 +30,7 @@ def toBinary(a):
 def flaten(img, columb, row):
     img = np.reshape(img, ((columb*row), 4))
     return img
+
 def reshape(img, columb, row):
     img = np.reshape(img, (row, columb, 4))
     return img
@@ -37,22 +38,27 @@ def reshape(img, columb, row):
 
 
 
-msg = toBinary("Hejsan ")
+# msg = toBinary("Hejsan ")
+msg = "010"
 print(msg)
 #Change value in array
 img = flaten(img, columb,row)
 
 j = 0
 for pixel in img:
-    if j < len(msg):
-        i = 0
-        while i < 4:
+    i = 0
+    if i < 4:
+        # print(pixel)
+        if j < len(msg):
+            print(pixel)
             print(j)
             if pixel[i] % 2 != int(msg[j]):
+                print("ändrade något")
                 if pixel[i] == 255:
                     pixel[i] = pixel[i]-1
                 else:
                     pixel[i] = pixel[i]+1
+                print(pixel)
             j += 1
             i += 1
 
@@ -77,9 +83,12 @@ for pixel in img:
 
 
 # show and save image
-# print(img[0][0][3])
+img = reshape(img, columb, row)
+# print(img[0][0])
+# print(img[0][1])
+# print(img[0][2])
 cv2.imwrite("Bild.png", img)
-cv2.imshow('image',img)
+# cv2.imshow('image',img)
 cv2.waitKey(0)
 
 

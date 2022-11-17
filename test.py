@@ -7,7 +7,7 @@ import cv2
 np.set_printoptions(threshold=sys.maxsize)
 
 
-img = cv2.imread('Brabild.png', cv2.IMREAD_UNCHANGED)
+img = cv2.imread('bratestbild.png', cv2.IMREAD_UNCHANGED)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
@@ -22,8 +22,9 @@ for row in img:
             # pixel[3] = 100
             i += 1
 
-print(img[0][1])
-print(img[0][0])
+# print(img[0][1])
+# print(img[0][0])
+print(img)
 
 
 
@@ -31,7 +32,8 @@ print(img[0][0])
 
 # show and save image
 # print(img[0][0][3])
-# cv2.imwrite("testBild.png", img)
+# img = np.array([[[11, 11, 11, 11],[12, 12, 12, 12,],[13,13,13,13]],[[21, 21, 21, 21],[22, 22, 22, 22],[23, 23, 23, 23]]])
+# cv2.imwrite("bratestBild.png", img)
 cv2.imshow('image',img)
 cv2.waitKey(0)
 
