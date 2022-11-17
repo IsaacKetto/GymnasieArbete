@@ -2,9 +2,10 @@ from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
 import cv2
-from noise import img
 
 np.set_printoptions(threshold=sys.maxsize)
+
+img = cv2.imread('Bild2.png', -1)
 
 retrieved_data = []
 j=0

@@ -10,31 +10,33 @@ img = cv2.imread('brabild.png',1)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
 
-#variable to close an infinite loop
-finished = False
+#Values for the reshape method
+columb = len(img[0])
+row = len(img)
+
+#Flatten method
+def flaten(img, columb, row):
+    img = np.reshape(img, ((columb*row), 4))
+    return img
+
+#reshape flattened array method
+def reshape(img, columb, row):
+    img = np.reshape(img, (row, columb, 4))
+    return img
 
 #variable to determine space between affected pixels
-space_between_pixels = (len(img)*len(img[0]))/len(array_with_byte_message)
-
-#Change value in array
-
-    # affected_pixels = pixels_to_change(space_between_pixels)
-j = 0
+space_between_pixels = int((len(img)*len(img[0]))/len(array_with_byte_message))
+print(space_between_pixels)
+img = flaten(img, columb, row)
 i = 0
-for row in img:
-    for pixel in row:     
-        if (j % space_between_pixels) == 0:
-            if i < len(array_with_byte_message):
-                pixel[3] = array_with_byte_message[i]
-                i += 1
-                print(j)
-        j += 1
-
+for pixel in img[::space_between_pixels]:     
+    if i < len(array_with_byte_message):
+        pixel[3] = array_with_byte_message[i]
+        i += 1
+img = reshape(img, columb, row)
 
 # show and save image
-# print(img[0][0][3])
 cv2.imwrite("Bild2.png", img)
-# cv2.imshow('image', (cv2.imread('Bild.png',1)))
 cv2.waitKey(0)
 
 
