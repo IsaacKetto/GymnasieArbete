@@ -1,4 +1,4 @@
-import imghdr
+
 from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
@@ -38,16 +38,16 @@ def reshape(img, columb, row):
 
 
 
-# msg = toBinary("Hejsan ")
-msg = "010"
-print(msg)
+msg = toBinary("hej")
+# msg = "01010"
+print(len(msg))
 #Change value in array
 img = flaten(img, columb,row)
 
 j = 0
 for pixel in img:
     i = 0
-    if i < 4:
+    while i < 4:
         # print(pixel)
         if j < len(msg):
             print(pixel)
@@ -61,22 +61,9 @@ for pixel in img:
                 print(pixel)
             j += 1
             i += 1
+        else:
+            break
 
-
-
-# j = 0
-# for row in img:
-#     for pixel in row:
-#         while j < len(msg):
-#             i = 0
-#             while i < 4:
-#                 if pixel[i] % 2 != int(msg[j]):
-#                     if pixel[i] == 255:
-#                         pixel[i] = pixel[i]-1
-#                     else:
-#                         pixel[i] = pixel[i]+1
-#                 j += 1
-#                 i += 1
 
 
 

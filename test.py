@@ -28,6 +28,20 @@ print(img)
 
 
 
+# j = 0
+# for row in img:
+#     for pixel in row:
+#         while j < len(msg):
+#             i = 0
+#             while i < 4:
+#                 if pixel[i] % 2 != int(msg[j]):
+#                     if pixel[i] == 255:
+#                         pixel[i] = pixel[i]-1
+#                     else:
+#                         pixel[i] = pixel[i]+1
+#                 j += 1
+#                 i += 1
+
 
 
 # show and save image
