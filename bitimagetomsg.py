@@ -15,7 +15,7 @@ def contvert_to_binary(img):
     msg = []
     j = 0
     msg_temp = ""
-    while i < len(img):
+    while i < len(img):     
         if j < 7:
             # print(img[i])
             
@@ -26,10 +26,13 @@ def contvert_to_binary(img):
             i +=1
             j += 1
         else:
+          if msg_temp == "1111111":
+            break
+          else:
             msg.append(int(msg_temp))
             msg_temp = ""
             j = 0
-    msg.append(int(msg_temp))
+    # msg.append(int(msg_temp))
     return msg
 
 def toString(a):

@@ -26,6 +26,6 @@ def toString(a):
     m=m+chr(x)
   return m
 
-print(toString("hejsam_"))
-# print(toBinary("Melker är bäst"))
+print(toString([1111111]))
+print(toBinary("HEJSAn "))
 # print(toString(toBinary("Melker är bäst")))
