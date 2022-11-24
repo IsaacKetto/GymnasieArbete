@@ -1,3 +1,4 @@
+
 from PIL import Image, ImageFilter, ImageChops
 import sys 
 import numpy as np
@@ -9,6 +10,22 @@ def import_img(path):
     img = cv2.imread(path, cv2.IMREAD_UNCHANGED)
     img = img.flatten()
     return img
+
+def toBinary(a):
+    l,m=[],[]
+    n = ""
+    j = 0
+    for i in a:
+        l.append(ord(i))
+    for i in l:
+        m.append(int(bin(i)[2:]))
+    for i in m:
+        i = str(i)
+        while len(i) < 8:
+            i = "0" + i 
+        n += i
+    n += "11111111"
+    return n
 
 def contvert_to_binary(img):
     i = 0
@@ -35,24 +52,13 @@ def contvert_to_binary(img):
     # msg.append(int(msg_temp))
     return msg
 
-def toString(a):
-  l=[]
-  m=""
-  for i in a:
-    b=0
-    c=0
-    k=int(math.log10(i))+1
-    for j in range(k):
-      b=((i%10)*(2**j))   
-      i=i//10
-      c=c+b
-    l.append(c)
-  for x in l:
-    m=m+chr(x)
-  return m
+msg = (toBinary(" "))
 
+while msg[0] != "1":
+    msg = msg.replace('0', '', 1)
+
+print(msg)   
 img = import_img("bild.png")
 msg = contvert_to_binary(img)
-msg = toString(msg)
 
 print(msg)

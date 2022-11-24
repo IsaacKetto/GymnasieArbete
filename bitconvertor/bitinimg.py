@@ -22,8 +22,11 @@ def toBinary(a):
     for i in l:
         m.append(int(bin(i)[2:]))
     for i in m:
-        n += str(i)
-    n += "1111111"
+        i = str(i)
+        while len(i) < 8:
+            i = "0" + i 
+        n += i
+    n += "11111111"
     return n
 
 
@@ -59,7 +62,7 @@ def change_value(img,msg):
                 return img             
     return img
 
-msg = toBinary("eeee")
+msg = toBinary("hejsan med ää")
 img = flaten(img, columb,row)
 img = change_value(img,msg)
 img = reshape(img, columb, row)
