@@ -6,17 +6,18 @@ from noise_v2 import flaten, reshape
 
 np.set_printoptions(threshold=sys.maxsize)
 
-img = cv2.imread('Bild2.png', -1)
+img = cv2.imread('Bild2.png', cv2.IMREAD_UNCHANGED)
 
 columb = len(img[0])
 row = len(img)
+
+amount_of_value_pixels = 10 #Value that needs to be known before decoding
 
 #Flattens the img pixel array for easier navigation
 img = flaten(img, columb, row)
 
 #function that retrieves the value from the first pixels that determines spacing between pixels
 def spacingValuePixels(img):
-    amount_of_value_pixels = 10 #Value that needs to be known before decoding
     space_between_pixels = ""
     retrieved_values = []
     i = 0
@@ -31,17 +32,14 @@ def spacingValuePixels(img):
     return int(space_between_pixels)
 
 retrieved_data = []
-j=0
 i=0
 value_spacing = spacingValuePixels(img)
-for pixel in img:
-    if (i % 4) == 0:
-        if j < message_length:
-            retrieved_data.append(pixel[3])
-        j += 1
-    i += 1
-
-print(retrieved_data)
+while (i*value_spacing + amount_of_value_pixels) < len(img):
+    if img[i*value_spacing + amount_of_value_pixels][3] == 255: #Checking if pixel is unchanged. If changed, the value of alpha channel will not be 255 (UTF-8 bytes doesn't have 255)
+        break
+    else:
+        retrieved_data.append(img[i*value_spacing + amount_of_value_pixels][3])
+        i += 1
 
 decoded_message = ""
 

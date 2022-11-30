@@ -6,7 +6,7 @@ from message_convert import array_with_byte_message
 
 np.set_printoptions(threshold=sys.maxsize)
 
-img = cv2.imread('brabild.png',1)
+img = cv2.imread('brabild.png', 1)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
 

@@ -1,10 +1,7 @@
 #Convert string to bytes with bytes(str, enc, error)
-message = "hej kuksugare"
+message = "Test Message" #Message only in English. UTF-8 doesn't support "å,ä,ö"
 message_encoded = bytes(message, 'UTF-8')
 array_with_byte_message = []
-
-#Printing the encoded message
-print(message_encoded)
 
 #Decoding the message
 for bytes in message_encoded:
