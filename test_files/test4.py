@@ -6,6 +6,8 @@ import cv2
 
 np.set_printoptions(threshold=sys.maxsize)
 
+
+img = cv2.imread('Brabild.png',cv2.IMREAD_UNCHANGED)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 #Datan visas i B G R A
 columb = len(img[0])
