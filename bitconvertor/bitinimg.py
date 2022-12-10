@@ -62,7 +62,7 @@ def change_value(img,msg):
                 return img             
     return img
 
-msg = toBinary("hejsan med ää")
+msg = toBinary("a")
 img = flaten(img, columb,row)
 img = change_value(img,msg)
 img = reshape(img, columb, row)
